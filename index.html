@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sketch to Colour</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Sketch to Colour</h1>
+      <p class="subtitle">Upload a photo and watch it drawn in pencil, then painted in colour</p>
+    </header>
+
+    <div class="stage-wrap">
+      <canvas id="stage" width="600" height="800" aria-label="Painting animation"></canvas>
+    </div>
+
+    <div class="progress" aria-hidden="true"><div id="barFill"></div></div>
+    <p id="status" class="status" aria-live="polite">Loading painting…</p>
+
+    <section class="controls" aria-label="Animation controls">
+      <label class="file-btn primary">
+        Upload image
+        <input id="fileInput" type="file" accept="image/*" class="sr-only">
+      </label>
+      <button id="btnStart" type="button" disabled>▶ Start</button>
+      <button id="btnPause" type="button" disabled>⏸ Pause</button>
+      <button id="btnRestart" type="button" disabled>↺ Restart</button>
+
+      <label class="speed">
+        Speed
+        <input id="speed" type="range" min="0.25" max="4" step="0.25" value="1">
+        <output id="speedLabel">1×</output>
+      </label>
+
+      <button id="btnSample" type="button">Sample painting</button>
+    </section>
+
+    <p id="message" class="message" hidden></p>
+    <p class="hint">Drop a photo onto the picture, or press Upload image. Your photo stays on your device and is not sent anywhere.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
